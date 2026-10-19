@@ -58,14 +58,16 @@
       }
     }
   },
-  "required": [
-    "vendor_name",
-    "invoice_number",
-    "invoice_date",
-    "invoice_total",
-    "currency",
-    "line_items",
-    "extraction_issues"
+  
+"required": [
+  "vendor_name",
+  "invoice_number",
+  "invoice_date",
+  "due_date",
+  "invoice_total",
+  "currency",
+  "line_items",
+  "extraction_issues"
   ],
   "additionalProperties": false
 }
