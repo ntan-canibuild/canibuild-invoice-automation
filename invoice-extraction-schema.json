@@ -1,0 +1,67 @@
+
+{
+  "type": "object",
+  "properties": {
+    "vendor_name": {
+      "type": ["string", "null"],
+      "description": "Supplier name as shown on the invoice"
+    },
+    "invoice_number": {
+      "type": ["string", "null"],
+      "description": "Invoice number exactly as printed"
+    },
+    "invoice_date": {
+      "type": ["string", "null"],
+      "description": "Invoice date in YYYY-MM-DD format"
+    },
+    "invoice_total": {
+      "type": ["number", "null"],
+      "description": "Total invoice amount including applicable taxes"
+    },
+    "currency": {
+      "type": ["string", "null"],
+      "description": "Three-letter currency code such as AUD or USD"
+    },
+    "line_items": {
+      "type": "array",
+      "description": "Every invoice line item in its original order",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": ["string", "null"]
+          },
+          "quantity": {
+            "type": ["number", "null"]
+          },
+          "rate": {
+            "type": ["number", "null"]
+          }
+        },
+        "required": [
+          "description",
+          "quantity",
+          "rate"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "extraction_issues": {
+      "type": "array",
+      "description": "Missing, unclear or conflicting invoice information",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "vendor_name",
+    "invoice_number",
+    "invoice_date",
+    "invoice_total",
+    "currency",
+    "line_items",
+    "extraction_issues"
+  ],
+  "additionalProperties": false
+}
