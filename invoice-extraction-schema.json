@@ -13,6 +13,10 @@
     "invoice_date": {
       "type": ["string", "null"],
       "description": "Invoice date in YYYY-MM-DD format"
+    },      
+    "due_date": {
+      "type": ["string", "null"],
+      "description": "Invoice payment due date in YYYY-MM-DD format. Use null if not specified."
     },
     "invoice_total": {
       "type": ["number", "null"],
