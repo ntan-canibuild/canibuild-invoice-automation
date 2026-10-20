@@ -1,7 +1,16 @@
 
 {
   "type": "object",
-  "properties": {
+  "properties": { 
+"document_type": {
+  "type": "string",
+  "enum": ["invoice", "credit_note", "statement", "receipt", "other", "uncertain"],
+  "description": "Classify the entire PDF. Use invoice only for a document requesting payment for goods or services. A multi-page invoice is one invoice. Statements, receipts, credit notes and ambiguous documents must not be classified as invoices."
+},
+"document_type_reason": {
+  "type": "string",
+  "description": "Brief explanation of why the document received this classification."
+},
     "vendor_name": {
       "type": ["string", "null"],
       "description": "Supplier name as shown on the invoice"
@@ -60,6 +69,8 @@
   },
   
 "required": [
+  "document_type",
+  "document_type_reason",
   "vendor_name",
   "invoice_number",
   "invoice_date",
